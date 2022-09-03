@@ -2,7 +2,7 @@ clc;
 clear all;
 close all;
 syms x;
-f=cos(5*x);
+f=x^3-6*x^2+11*x-6;
 g=diff(f);
 disp('For given fuction : ');
 disp(f);
@@ -23,5 +23,10 @@ end
 X=linspace(x0-10,x0+10);
 Y=subs(f,x,X);
 figure;
-plot(X,Y,x0,0,'r--*');
+plot(X,Y);
+hold on;
+plot([1 1]*x0, ylim, '-r')  
+plot(xlim,[1 1]*0, '-r')  
+plot (x0,0, 'r.', 'MarkerSize', 20);
+hold off;
 fprintf('Root of the given function is : %f found in %d iterations.\n',x0,i);
