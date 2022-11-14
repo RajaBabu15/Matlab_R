@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+syms a b c d e;
+e1=7*a-c==60;
+e2=3*a+b-4*e==0;
+e3=a-b==0;
+e4=b+8*c-12*d+2*e==0;
+e5=b-c-8*d==-160;
+[A,B]=equationsToMatrix([e1,e2,e3,e4,e5],[a,b,c,d,e]);
+X=vpa(linsolve(A,B));
+disp(X);
